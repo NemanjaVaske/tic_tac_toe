@@ -66,7 +66,7 @@ class Game
             table[0] == current_player && table[3] == current_player && table[6] == current_player || #columns
             table[1] == current_player && table[4] == current_player && table[7] == current_player ||
             table[2] == current_player && table[5] == current_player && table[8] == current_player ||
-            table[0] == current_player && table[4] == current_player && table[8] == current_player ||
+            table[0] == current_player && table[4] == current_player && table[8] == current_player || #diagonals
             table[2] == current_player && table[4] == current_player && table[6] == current_player )
             @winner = true
             puts "Winner is #{current_player}"
