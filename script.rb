@@ -12,20 +12,6 @@ class Game
         @game_over = false
         @winner = false
     end
-    
-    def print_table
-        
-        i=0
-        3.times do
-            puts "#{table[i]} #{table[i+1]} #{table[i+2]}"
-            i +=3
-        end
-        
-    end
-
-    def input_move(current_player,place)
-        table[place-1] = current_player
-    end
 
     def start
         print_table
@@ -58,6 +44,22 @@ class Game
     
         end
     end
+    private
+    def print_table
+        
+        i=0
+        3.times do
+            puts "#{table[i]} #{table[i+1]} #{table[i+2]}"
+            i +=3
+        end
+        
+    end
+
+    def input_move(current_player,place)
+        table[place-1] = current_player
+    end
+
+    
 
     def checking_winner(table,current_player)
         if (table[0] == current_player && table[1] == current_player && table[2] == current_player || #rows
@@ -75,5 +77,6 @@ class Game
 
 end
 puts("Choose 'O' or 'X' ")
+
 moja_igra = Game.new(gets.chomp)
 moja_igra.start
